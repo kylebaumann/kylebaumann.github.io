@@ -1,0 +1,443 @@
+/* TO GET AN IDEA OF THE CSS YOU WILL LIKELY BE USING, SEE THE LISTS BELOW. */
+
+/* 
+        
+        Spacing 
+
+            - padding (shorthand and/or specific properties like padding-bottom, etc.)
+
+            - margin, (shorthand and/or specific properties like margin-top, etc.)
+
+            - letter-spacing, word-spacing, line-height
+
+            - width, max-width, min-width
+            - height, max-height, min-height
+
+        Typography 
+
+            - font-family, font-size, font-style, font-weight
+
+            - text-decoration, text-align
+
+            - color
+
+            - text-shadow, text-transform
+
+        Box, Layout and Border 
+
+            - border (shorthand and/or specific properties like border-top, border-bottom-radius, border-width, etc.)
+
+            - box-shadow
+
+            - display, float, align-items, align-content
+
+            - grid-template-columns, grid-column-gap
+
+            - transform
+
+        Other
+
+            - :nth()-child (to target specific child elements)
+
+            - :focus, :hover, :active (to target link states)
+
+            - @font-face or @import (to import typefaces)
+
+*/
+
+/* ------ START WRITING YOUR CODE BELOW ------ */
+
+/* === SANS-SERIF FONTS === */
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/sans-serif/lato-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/sans-serif/montserrat-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/sans-serif/opensans-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/sans-serif/roboto-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* === SERIF FONTS === */
+
+@font-face {
+    font-family: "Josefin Slab";
+    src: url("../fonts/serif/josefinslab-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    src: url("../fonts/serif/robotoslab-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rozha One";
+    src: url("../fonts/serif/rozhaone-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ultra";
+    src: url("../fonts/serif/ultra-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ------ GLOBAL / BASE ------ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+
+    font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f6;
+}
+
+/* Links */
+
+a {
+    color: #11396c;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* ------ HEADER / LOGO ------ */
+
+header {
+    text-align: center;
+    padding: 3rem 1rem 2.5rem; /* more height + bottom padding */
+    margin-bottom: 1.5rem; /* extra space before the nav bar */
+}
+
+/* CHARCOAL/banner */
+.highlight {
+    display: inline-block;
+    padding: 0rem 1.5rem 0rem; /* taller + wider */
+    margin: 1rem 0.7rem 1.5rem;
+    background-color: #7f2332; /* deep red */
+    color: #edefdd; /* off-white text */
+
+    font-family: "Ultra", serif; /* heavy slab for CHARCOAL */
+    font-weight: normal;
+    font-size: 3rem;
+    text-transform: uppercase;
+
+    /* angle + position of the banner */
+    transform: rotate(-5deg) translateY(0.35rem);
+    transform-origin: center;
+
+    /* rounded top-left + bottom-right */
+    border-radius: 1.5rem 0 1.5rem 0;
+
+    /* stronger label-like shadow */
+    box-shadow: 0.2rem 0.2rem 0.2rem #312c2c;
+
+    /* subtle inner text pop */
+    text-shadow: 3px 2px 0 #312c2c;
+}
+
+.left-side-word,
+.right-side-word {
+    font-family: "Roboto", serif;
+    color: #212020;
+    font-weight: bold;
+    font-size: 3rem;
+    letter-spacing: 0.03em;
+    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.7);
+
+    display: inline-block; /* Required for transform to work on inline elements */
+    transform: rotate(-5deg);
+}
+
+.left-side-word {
+    transform: rotate(-5deg) translateY(1.8rem); /* Lower */
+}
+
+.right-side-word {
+    transform: rotate(-5deg) translateY(-1.3rem); /* Raise */
+}
+
+/* ------ NAVIGATION ------ */
+
+nav {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.75rem 3rem;
+    display: flex;
+    justify-content: left;
+    gap: 3.3rem;
+}
+
+nav a {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- BLOG --- */
+nav a.current {
+    display: inline-block;
+    text-decoration: line-through;
+    text-transform: uppercase;
+    transform: rotate(4deg);
+    font-size: 1.1rem;
+
+    color: #050505;
+}
+
+/* ------ MAIN LAYOUT ------ */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 3rem 1rem;
+    background-color: #ffffff;
+}
+
+h2 {
+    font-family: "Roboto", serif;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem;
+}
+
+/* main section: article + aside side-by-side */
+
+.main-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* ARTICLE COLUMN */
+
+article {
+    flex: 4;
+}
+
+/* float image so text wraps */
+
+.article-image {
+    float: left;
+    margin: 0 1rem 1rem 0;
+    max-width: 40%;
+}
+
+.article-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+article p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    font-family: "Roboto", serif;
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
+
+article h3 {
+    font-family: "Roboto", serif;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.post-date {
+    font-size: 0.6rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* subsection grid of three images */
+
+.subsection {
+    clear: both;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    background-color: transparent;
+}
+
+.subsection figure {
+    margin: 0;
+    background-color: #f3f2ec;
+    padding-bottom: 0.5rem;
+}
+
+.subsection img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.subsection figcaption {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.6rem;
+}
+
+/* subscribe button */
+
+.subscribe-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    background-color: #214a6b;
+    font-family: "Ultra", serif;
+    color: #edeedd;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #221f1f;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+    transform: translateY(1px);
+    box-shadow: 0 0.25rem 0 #132a3b;
+}
+
+/* ------ ASIDE COLUMN ------ */
+
+aside {
+    flex: 1;
+    border-left: 1px solid #000;
+    padding-left: 1.5rem;
+}
+
+.aside-block {
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5rem;
+}
+
+aside h3 {
+    font-family: "Roboto", serif;
+    font-size: 0.7rem;
+    margin: 0 0 0.5rem;
+}
+
+aside img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+aside p {
+    font-family: "Roboto", serif;
+    font-size: 0.5rem;
+    margin: 0;
+}
+
+/* link with the three circles */
+
+.expand {
+    display: inline-block;
+    font-size: 0.2rem;
+    line-height: 1;
+    margin-top: 0.4rem;
+    padding: 0;
+    vertical-align: top;
+}
+
+/* ------ FOOTER ------ */
+
+footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem 3rem;
+    font-size: 0.6rem;
+    color: #0f0f0f;
+    background-color: #ffffff;
+}
+
+footer p:first-of-type a {
+    color: #4e6f46fc;
+}
+.attribution {
+    text-align: right;
+    margin-top: 0.75rem;
+    font-size: 0.6rem;
+
+    padding-right: 1rem;
+}
+
+.attribution a {
+    color: #4e6f46fc;
+}
+
+/* ------ SMALL SCREEN TWEAKS ------ */
+
+@media (max-width: 840px) {
+    .main-section {
+        flex-direction: column;
+    }
+
+    .article-image {
+        float: none;
+        max-width: 100%;
+        margin: 0 0 1rem 0;
+    }
+
+    aside {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #cccccc;
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 1.25rem;
+    }
+}
