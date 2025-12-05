@@ -145,19 +145,19 @@ a:focus {
 
 header {
     text-align: center;
-    padding: 3rem 1rem 2.5rem; /* more height + bottom padding */
-    margin-bottom: 1.5rem; /* extra space before the nav bar */
+    padding: 1rem 1rem 1rem;
+    margin-bottom: 0.75rem;
 }
 
 /* CHARCOAL/banner */
 .highlight {
     display: inline-block;
-    padding: 0rem 1.5rem 0rem; /* taller + wider */
+    padding: 0rem 1.5rem 0rem;
     margin: 1rem 0.7rem 1.5rem;
-    background-color: #7f2332; /* deep red */
-    color: #edefdd; /* off-white text */
+    background-color: #7f2332;
+    color: #edefdd;
 
-    font-family: "Ultra", serif; /* heavy slab for CHARCOAL */
+    font-family: "Ultra", serif;
     font-weight: normal;
     font-size: 3rem;
     text-transform: uppercase;
@@ -185,7 +185,7 @@ header {
     letter-spacing: 0.03em;
     text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.7);
 
-    display: inline-block; /* Required for transform to work on inline elements */
+    display: inline-block;
     transform: rotate(-5deg);
 }
 
@@ -211,7 +211,7 @@ nav ul {
     padding: 0.75rem 3rem;
     display: flex;
     justify-content: left;
-    gap: 3.3rem;
+    gap: 4rem;
 }
 
 nav a {
@@ -219,7 +219,7 @@ nav a {
     font-size: 1.1rem;
 }
 
-/* --- BLOG --- */
+/* --- "BLOG" --- */
 nav a.current {
     display: inline-block;
     text-decoration: line-through;
@@ -233,7 +233,8 @@ nav a.current {
 /* ------ MAIN LAYOUT ------ */
 
 main {
-    max-width: 1100px;
+    width: 100%;
+    margin: 0;
     margin: 0 auto;
     padding: 2rem 3rem 1rem;
     background-color: #ffffff;
@@ -241,12 +242,12 @@ main {
 
 h2 {
     font-family: "Roboto", serif;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin: 0 0 0.5rem;
 }
 
-/* main section: article + aside side-by-side */
+/* Main section: article + aside side-by-side */
 
 .main-section {
     display: flex;
@@ -260,7 +261,7 @@ article {
     flex: 4;
 }
 
-/* float image so text wraps */
+/* Float image so text wraps */
 
 .article-image {
     float: left;
@@ -279,15 +280,15 @@ article p {
     margin-right: 0;
     margin-top: 0;
     font-family: "Roboto", serif;
-    font-size: 0.7rem;
+    font-size: 1.1rem;
     line-height: 1.5;
 }
 
 article h3 {
     font-family: "Roboto", serif;
     margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
 }
 
 .post-date {
@@ -296,7 +297,7 @@ article h3 {
     margin-top: 0.5rem;
 }
 
-/* subsection grid of three images */
+/* Subsection grid of three images */
 
 .subsection {
     clear: both;
@@ -309,7 +310,7 @@ article h3 {
 
 .subsection figure {
     margin: 0;
-    background-color: #f3f2ec;
+    background-color: #edeedc;
     padding-bottom: 0.5rem;
 }
 
@@ -320,17 +321,19 @@ article h3 {
 }
 
 .subsection figcaption {
-    padding: 0.5rem 0.3rem;
-    font-size: 0.6rem;
+    padding: 0.4rem 0.5rem 0.1rem;
+    font-size: 0.8rem;
+    margin: 0;
 }
 
-/* subscribe button */
+/* Subscribe button */
 
 .subscribe-btn {
     display: inline-block;
     margin-top: 2rem;
+    margin-bottom: 1rem;
     padding: 0.6rem 0.75rem;
-    font-size: 1rem;
+    font-size: 2rem;
     background-color: #214a6b;
     font-family: "Ultra", serif;
     color: #edeedd;
@@ -361,7 +364,7 @@ aside {
 
 aside h3 {
     font-family: "Roboto", serif;
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin: 0 0 0.5rem;
 }
 
@@ -374,43 +377,53 @@ aside img {
 
 aside p {
     font-family: "Roboto", serif;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     margin: 0;
 }
 
-/* link with the three circles */
+/* link with (Ellipsis) the three circles */
 
 .expand {
-    display: inline-block;
+    display: block;
     font-size: 0.2rem;
     line-height: 1;
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
     padding: 0;
-    vertical-align: top;
+    color: #000;
+    text-decoration: none;
 }
 
 /* ------ FOOTER ------ */
 
 footer {
-    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1.75rem 1.5rem 3rem;
-    font-size: 0.6rem;
-    color: #0f0f0f;
+    padding: 1.75rem 3rem 3rem;
+    font-size: 1rem;
     background-color: #ffffff;
+    color: #0f0f0f;
 }
 
-footer p:first-of-type a {
-    color: #4e6f46fc;
+footer p {
+    width: 50%;
+    margin: 0.25rem 0;
 }
+
+footer p:first-of-type {
+    text-align: left;
+}
+
 .attribution {
     text-align: right;
-    margin-top: 0.75rem;
-    font-size: 0.6rem;
-
-    padding-right: 1rem;
+    padding-left: 3rem;
 }
 
+footer a,
 .attribution a {
     color: #4e6f46fc;
 }
